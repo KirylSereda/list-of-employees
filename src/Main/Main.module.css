@@ -1,0 +1,18 @@
+.main_container {
+    height: 100vh;
+    background-color: antiquewhite;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main_inner {
+    margin-top: 50px;
+    width: 900px;
+    font-family: 'Montserrat', sans-serif; ;
+    font-weight: 600;
+}
+
+
+
