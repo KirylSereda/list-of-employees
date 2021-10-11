@@ -4,25 +4,24 @@ import { getUsers, deletePost, pushUser } from '../Redux/users-reducer'
 import React from "react";
 import Form from "../addform/form";
 import style from './staff.module.css'
+import { useEffect } from "react";
 
-class StaffContainer extends React.Component {
+const StaffContainer = (props) => {
 
-    componentDidMount() {
-        this.props.getUsers();
-    }
+    useEffect(() => {
+        props.getUsers();
+    }, []);
 
-    render() {
-        return (
-            <div className={style.container}>
-                <div className={style.staff} >
-                    {this.props.users.map(u => <Staff  user={u} key={u.id} deletePost={this.props.deletePost} />)}
-                </div>
-                <div  className={style.form}>
-                    <Form pushUser={this.props.pushUser} />
-                </div>
+    return (
+        <div className={style.container}>
+            <div className={style.staff} >
+                {props.users.map(u => <Staff user={u} key={u.id} deletePost={props.deletePost} />)}
             </div>
-        )
-    }
+            <div className={style.form}>
+                <Form pushUser={props.pushUser} />
+            </div>
+        </div>
+    )
 }
 
 const mapStateToProps = (state) => {

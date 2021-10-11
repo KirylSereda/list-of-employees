@@ -10,10 +10,11 @@ class App extends Component {
 
   return (
     <div >
+      <Redirect from='/' to='/main'/>
       <NavBar />
       <Route path='/main' render={() => <Main />} />
       <Route path='/staff' render={() => <StaffContainer/>} />
-      <Redirect from='/' to='/main'/>
+      
     </div>
   )
 }

@@ -16,7 +16,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.filter(user => user.id !== action.userId)
-            }
+            };
         }
         case PUSH_USER: {
             let newUser = {
@@ -29,11 +29,11 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: [...state.users, newUser]
-            }
+            };
         }
         default:
             return state;
-    }
+    };
 };
 
 export const setUsers = (users) => ({ type: SET_USERS, users })
